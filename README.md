@@ -112,4 +112,4 @@ wikiagent/
 
 ## 灵感来源
 
-本项目实现了 [LLM Wiki](https://github.com/tobi/llm-wiki) 模式：LLM 做所有繁琐的知识库维护工作（摘要、交叉引用、一致性维护），人类专注于策展、提问和思考。
+本项目实现了 [Karpathy 的 LLM Wiki 模式](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)：LLM 做所有繁琐的知识库维护工作（摘要、交叉引用、一致性维护），人类专注于策展、提问和思考。
