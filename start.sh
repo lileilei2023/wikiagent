@@ -16,6 +16,6 @@ else
 fi
 
 # Inject wiki-specific system prompt into main agent
-export PYAGENT_SYSTEM_PROMPT_FILE="wiki_main_prompt.md"
+export WIKIAGENT_SYSTEM_PROMPT_FILE="wiki_main_prompt.md"
 
-exec "$PYTHON" -m pyagent.main "$@"
+exec "$PYTHON" -m wikiagent.main "$@"

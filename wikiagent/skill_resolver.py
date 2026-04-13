@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from pyagent.skill_loader import SkillInfo, get_skills_summary
-from pyagent.agent import Agent, AgentResult
-from pyagent.llm import LLMClient
-from pyagent.tool import ToolRegistry
+from wikiagent.skill_loader import SkillInfo, get_skills_summary
+from wikiagent.agent import Agent, AgentResult
+from wikiagent.llm import LLMClient
+from wikiagent.tool import ToolRegistry
 
 SKILL_MATCHER_SYSTEM_PROMPT = (
     "You are a skill matcher agent. Your ONLY job is to determine which skills "

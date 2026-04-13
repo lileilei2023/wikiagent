@@ -5,8 +5,8 @@ import os
 import time
 from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from pyagent.tool import ToolRegistry
-from pyagent.llm import LLMClient
+from wikiagent.tool import ToolRegistry
+from wikiagent.llm import LLMClient
 
 DEFAULT_SYSTEM_PROMPT = (
     "You are an AI agent that helps users complete tasks using available tools.\n"

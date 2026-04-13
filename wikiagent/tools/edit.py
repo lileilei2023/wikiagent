@@ -1,5 +1,5 @@
 import os
-from pyagent.tool import Tool
+from wikiagent.tool import Tool
 
 
 def _execute_edit(file_path: str, old_str: str, new_str: str) -> str:

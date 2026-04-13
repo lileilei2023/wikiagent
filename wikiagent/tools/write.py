@@ -1,5 +1,5 @@
 import os
-from pyagent.tool import Tool
+from wikiagent.tool import Tool
 
 
 def _execute_write(file_path: str, content: str) -> str:

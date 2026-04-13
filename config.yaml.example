@@ -3,9 +3,9 @@
 # config.yaml is gitignored and will NOT be committed.
 #
 # You can also use environment variables instead:
-#   export PYAGENT_BASE_URL="https://api.openai.com/v1"
-#   export PYAGENT_API_KEY="sk-xxx"
-#   export PYAGENT_MODEL="gpt-4"
+#   export WIKIAGENT_BASE_URL="https://api.openai.com/v1"
+#   export WIKIAGENT_API_KEY="sk-xxx"
+#   export WIKIAGENT_MODEL="gpt-4"
 
 llm:
   # Any OpenAI-compatible API endpoint

@@ -1,4 +1,4 @@
-from pyagent.tool import Tool
+from wikiagent.tool import Tool
 
 
 def _execute_task(prompt, subagent_type="explore", agent_factory=None):

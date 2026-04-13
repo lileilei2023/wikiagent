@@ -1,5 +1,5 @@
 import json
-from pyagent.tool import Tool
+from wikiagent.tool import Tool
 
 _TODO_STORE: dict[str, list[dict]] = {}
 

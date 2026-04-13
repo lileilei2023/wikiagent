@@ -1,7 +1,7 @@
-from pyagent.subagents.explore import EXPLORE_SYSTEM_PROMPT, EXPLORE_TOOLS
-from pyagent.subagents.wiki_ingest import WIKI_INGEST_SYSTEM_PROMPT, WIKI_INGEST_TOOLS
-from pyagent.subagents.wiki_query import WIKI_QUERY_SYSTEM_PROMPT, WIKI_QUERY_TOOLS
-from pyagent.subagents.wiki_lint import WIKI_LINT_SYSTEM_PROMPT, WIKI_LINT_TOOLS
+from wikiagent.subagents.explore import EXPLORE_SYSTEM_PROMPT, EXPLORE_TOOLS
+from wikiagent.subagents.wiki_ingest import WIKI_INGEST_SYSTEM_PROMPT, WIKI_INGEST_TOOLS
+from wikiagent.subagents.wiki_query import WIKI_QUERY_SYSTEM_PROMPT, WIKI_QUERY_TOOLS
+from wikiagent.subagents.wiki_lint import WIKI_LINT_SYSTEM_PROMPT, WIKI_LINT_TOOLS
 
 SUBAGENT_CONFIGS = {
     "explore": {

@@ -1,5 +1,5 @@
 import subprocess
-from pyagent.tool import Tool
+from wikiagent.tool import Tool
 
 
 def _execute_grep(pattern: str, path: str = ".", include: str = "") -> str:

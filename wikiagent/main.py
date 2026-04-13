@@ -4,21 +4,21 @@ import time
 
 import yaml
 
-from pyagent.llm import LLMClient
-from pyagent.tools import create_default_registry, create_limited_registry
-from pyagent.agent import Agent, DEFAULT_SYSTEM_PROMPT
-from pyagent.subagents import SUBAGENT_CONFIGS
-from pyagent.skill_loader import load_skills
-from pyagent.skill_resolver import resolve_skills, build_skill_prompt_section
+from wikiagent.llm import LLMClient
+from wikiagent.tools import create_default_registry, create_limited_registry
+from wikiagent.agent import Agent, DEFAULT_SYSTEM_PROMPT
+from wikiagent.subagents import SUBAGENT_CONFIGS
+from wikiagent.skill_loader import load_skills
+from wikiagent.skill_resolver import resolve_skills, build_skill_prompt_section
 
 
 def _load_config():
     """Load LLM config from config.yaml, env vars, or fail with clear message.
 
     Priority (highest wins):
-      1. Environment variables: PYAGENT_BASE_URL, PYAGENT_API_KEY, PYAGENT_MODEL
+      1. Environment variables: WIKIAGENT_BASE_URL, WIKIAGENT_API_KEY, WIKIAGENT_MODEL
       2. config.yaml in current working directory
-      3. config.yaml in project root (next to pyagent/ package)
+      3. config.yaml in project root (next to wikiagent/ package)
     """
     config = {}
 
@@ -34,16 +34,16 @@ def _load_config():
             break
 
     # Env vars override config.yaml
-    config["base_url"] = os.environ.get("PYAGENT_BASE_URL", config.get("base_url", ""))
-    config["api_key"] = os.environ.get("PYAGENT_API_KEY", config.get("api_key", ""))
-    config["model"] = os.environ.get("PYAGENT_MODEL", config.get("model", ""))
+    config["base_url"] = os.environ.get("WIKIAGENT_BASE_URL", config.get("base_url", ""))
+    config["api_key"] = os.environ.get("WIKIAGENT_API_KEY", config.get("api_key", ""))
+    config["model"] = os.environ.get("WIKIAGENT_MODEL", config.get("model", ""))
 
     # Validate
     missing = [k for k in ("base_url", "api_key", "model") if not config.get(k)]
     if missing:
         print("❌ Missing LLM config: {}".format(", ".join(missing)))
         print("   Set via config.yaml (llm.base_url / llm.api_key / llm.model)")
-        print("   Or env vars: PYAGENT_BASE_URL, PYAGENT_API_KEY, PYAGENT_MODEL")
+        print("   Or env vars: WIKIAGENT_BASE_URL, WIKIAGENT_API_KEY, WIKIAGENT_MODEL")
         sys.exit(1)
 
     return config
@@ -89,7 +89,7 @@ def main():
 
     system_prompt = DEFAULT_SYSTEM_PROMPT
     # Allow injecting extra system prompt context via environment variable
-    extra_prompt_file = os.environ.get("PYAGENT_SYSTEM_PROMPT_FILE")
+    extra_prompt_file = os.environ.get("WIKIAGENT_SYSTEM_PROMPT_FILE")
     if extra_prompt_file and os.path.exists(extra_prompt_file):
         with open(extra_prompt_file, "r", encoding="utf-8") as f:
             extra_prompt = f.read().strip()

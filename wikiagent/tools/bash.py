@@ -1,5 +1,5 @@
 import subprocess
-from pyagent.tool import Tool
+from wikiagent.tool import Tool
 
 
 def _execute_bash(command: str, timeout: int = 30) -> str:

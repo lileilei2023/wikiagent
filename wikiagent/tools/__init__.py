@@ -1,14 +1,14 @@
-from pyagent.tool import Tool, ToolRegistry
-from pyagent.tools.bash import make_bash_tool
-from pyagent.tools.edit import make_edit_tool
-from pyagent.tools.glob_tool import make_glob_tool
-from pyagent.tools.grep import make_grep_tool
-from pyagent.tools.ls import make_ls_tool
-from pyagent.tools.read import make_read_tool
-from pyagent.tools.write import make_write_tool
-from pyagent.tools.todo import make_todo_create_tool, make_todo_write_tool, make_todo_read_tool
-from pyagent.tools.task import make_task_tool
-from pyagent.tools.web_fetch import make_web_fetch_tool
+from wikiagent.tool import Tool, ToolRegistry
+from wikiagent.tools.bash import make_bash_tool
+from wikiagent.tools.edit import make_edit_tool
+from wikiagent.tools.glob_tool import make_glob_tool
+from wikiagent.tools.grep import make_grep_tool
+from wikiagent.tools.ls import make_ls_tool
+from wikiagent.tools.read import make_read_tool
+from wikiagent.tools.write import make_write_tool
+from wikiagent.tools.todo import make_todo_create_tool, make_todo_write_tool, make_todo_read_tool
+from wikiagent.tools.task import make_task_tool
+from wikiagent.tools.web_fetch import make_web_fetch_tool
 
 
 def create_default_registry(agent_factory=None):

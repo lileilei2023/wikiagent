@@ -1,5 +1,5 @@
 import os
-from pyagent.tool import Tool
+from wikiagent.tool import Tool
 
 
 def _execute_read(file_path: str, offset: int = 1, limit: int = 2000) -> str:

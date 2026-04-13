@@ -3,7 +3,7 @@ import re
 import urllib.error
 import urllib.request
 
-from pyagent.tool import Tool
+from wikiagent.tool import Tool
 
 
 _USER_AGENT = "Mozilla/5.0 (compatible; PyAgent-WebFetch/1.0)"
