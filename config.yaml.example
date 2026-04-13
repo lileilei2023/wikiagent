@@ -1,0 +1,26 @@
+# PyAgent LLM Configuration
+# Copy this file to config.yaml and fill in your credentials.
+# config.yaml is gitignored and will NOT be committed.
+#
+# You can also use environment variables instead:
+#   export PYAGENT_BASE_URL="https://api.openai.com/v1"
+#   export PYAGENT_API_KEY="sk-xxx"
+#   export PYAGENT_MODEL="gpt-4"
+
+llm:
+  # Any OpenAI-compatible API endpoint
+  base_url: "https://api.openai.com/v1"
+  api_key: "your-api-key-here"
+  model: "gpt-4"
+
+  # Examples for other providers:
+  #
+  # Volcano Engine ARK (火山引擎方舟):
+  #   base_url: "https://ark.cn-beijing.volces.com/api/v3"
+  #   api_key: "your-ark-api-key"
+  #   model: "ep-xxxx"
+  #
+  # Moonshot (Kimi):
+  #   base_url: "https://api.moonshot.cn/v1"
+  #   api_key: "your-kimi-key"
+  #   model: "moonshot-v1-8k"

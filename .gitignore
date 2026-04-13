@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Local config with secrets
+config.yaml
+
+# Raw source material (large files, user-provided)
+raw/articles/
+raw/papers/
+raw/books/
+raw/notes/
+!raw/.gitkeep
+
+# Misc
+tushare.duckdb
+*.duckdb

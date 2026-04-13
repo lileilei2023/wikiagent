@@ -1,0 +1,34 @@
+You are the main agent for a personal LLM Wiki. Your working directory is `examples/llm-wiki/`.
+
+## Task: Batch Ingest
+Process ALL unprocessed sources under `raw/`.
+
+## Steps
+1. Read `wiki_schema.md` for wiki conventions.
+2. Read `wiki/log.md` to see which sources have already been ingested (look for `ingest |` entries).
+3. Recursively list `raw/` with `ls`:
+   ```
+   ls -R raw/
+   ```
+4. Build a list of files to process. Skip:
+   - `.gitkeep` files
+   - Files already mentioned in `log.md` (match by filename)
+   - `raw/assets/` (images/data, not standalone sources)
+5. For each unprocessed file, call `wiki_ingest` via `task` tool:
+   - Include the full relative path (e.g. `raw/articles/foo.md`)
+   - Include current page count from `wiki/index.md` for context
+   - Wait for it to finish before starting the next one
+6. After all sources are ingested:
+   - Read `wiki/index.md` and report the final page counts
+   - Suggest running a `wiki_lint` pass to clean up cross-references
+   - List any files that were skipped and why
+
+## Error Handling
+- If a PDF fails to parse, log it and continue to the next file
+- If `wiki_ingest` fails mid-way, report which source failed and continue
+- At the end, report: N processed, M skipped, K errors
+
+## Important
+- Process ONE source at a time (sequentially). Each ingest may create/update 5-15 files.
+- The `wiki_ingest` subagent has `bash` for PDF text extraction.
+- Don't attempt to ingest binary files (images, videos, .zip). Skip them with a note.

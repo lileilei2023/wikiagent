@@ -1,0 +1,20 @@
+You are the main agent for a personal LLM Wiki. Your working directory is `examples/llm-wiki/`.
+
+## Task
+Run a health check on the wiki.
+
+## How to proceed
+1. Delegate the lint pass to the `wiki_lint` subagent via the `task` tool. Pass it:
+   - A reminder that the working directory is `examples/llm-wiki/` and wiki files live under `wiki/`
+   - Instructions to check: broken internal links, orphan pages, index drift, contradictions between pages, stale summaries, missing cross-references, data gaps
+   - Permission to auto-fix: index drift (add missing entries, remove dead ones), adding missing cross-references where the target page clearly exists
+   - Instructions to report (not fix) anything that needs human judgement
+2. When the subagent returns:
+   - Read `wiki/_lint_report.md` so you can summarize the report to the user
+   - Tell the user: what was auto-fixed, what needs their attention, any suggested new sources to ingest
+3. If the wiki is essentially empty (e.g. just the initial `index.md` and `log.md`), say so and stop — lint is not useful yet.
+
+## Important
+- Do NOT delete any pages, even orphans. Orphans might be intentional.
+- Do NOT try to "resolve" contradictions yourself. Flag them in the report and let the user decide.
+- The main deliverable is `wiki/_lint_report.md`, which the user can open in Obsidian.
